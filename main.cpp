@@ -32,7 +32,6 @@ int main()
 		case 4: 
 			iLength = 4; jLength = 4; xLen = 2; yLen = 2; break;
 	}
-	std::cout << xLen << yLen << std::endl;
 	int** kMap;
 	kMap = new int*[iLength];
 	for (int l = 0; l < iLength; l++)
@@ -48,7 +47,6 @@ int main()
 	for (int k = 0; k < sumoprod.size(); k++)
 	{
 		tmpInputs = sumoprod[k];
-		std::cout << tmpInputs;
 		grayX = grayIndex(strLeft(tmpInputs, xLen));
 		grayY = grayIndex(strRight(tmpInputs, yLen));
 		kMap[grayX][grayY] = 1;
@@ -89,7 +87,6 @@ int usrInput(std::string outMessage, int lowerLength, int upperLength)
 		} else {
 			std::cout << "Value is not a positive integer." << std::endl;
 		}
-		tmpInput = "1";
 	}	
 	return stoi(tmpInput);
 }
@@ -109,8 +106,8 @@ int grayIndex(std::string grayCode)
 std::vector<std::string> splitString(const std::string &sentence, char delim)
 {
 	std::vector<std::string> elements;
-	std::stringstream strStream(sentence);
 	std::string word;
+	std::stringstream strStream(sentence);
 	while (std::getline(strStream, word, delim))
 	{
 		elements.push_back(word);
@@ -128,6 +125,8 @@ void display(int** thisArray, int rows, int cols)
 		}
 		std::cout << std::endl;
 	}
+	//simplified expression:	
+	
 }
 
 std::string strLeft(std::string strIn, int count)
@@ -137,7 +136,6 @@ std::string strLeft(std::string strIn, int count)
 	{
 		tmpStr.push_back(strIn[1]);
 	}
-	std::cout << tmpStr;
 	return tmpStr;
 }
 
@@ -148,6 +146,5 @@ std::string strRight(std::string strIn, int count)
 	{
 		tmpStr.push_back(strIn[strIn.size() - 1]);
 	}
-	std::cout << tmpStr << std::endl;
 	return tmpStr;
 }
